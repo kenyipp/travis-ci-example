@@ -1,0 +1,23 @@
+language: node_js
+
+node_js:
+  - "14"
+
+install: 
+  - npm install
+
+jobs:
+  include:
+
+    - stage: Build and test
+      script: 
+      - npm run test
+
+env:
+  - NODE_ENV=TEST
+
+cache: npm
+
+notifications:
+  email:
+    - ken20206@gmail.com
